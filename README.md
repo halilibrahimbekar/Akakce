@@ -25,3 +25,12 @@ Example ProductId 2 :
 
 * Use the method below to add product to cart 
 > /api/Cart
+
+Example Request 
+```
+{
+  "productId": "3c747f97-7549-403d-8ad2-966425e09456",
+  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", // whatever you want
+  "productCount": 3
+}
+```
