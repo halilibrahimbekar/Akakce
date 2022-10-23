@@ -4,7 +4,9 @@
 * clone the repo
 * open a terminal app on the project location
 * write the command below
-> docker compose up
+```
+docker compose up
+```
 
 * Please visit "http://localhost:8080/swagger/index.html"
 
