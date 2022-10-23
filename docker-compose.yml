@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  akakce:
+    image: ${DOCKER_REGISTRY-}akakce
+    build:
+      context: .
+      dockerfile: Akakce/Dockerfile

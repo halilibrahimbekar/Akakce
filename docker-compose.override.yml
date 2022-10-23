@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  akakce:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pw
+    ports:
+      - 5432:5432
+    volumes:
+      - data:/var/lib/postgresql
+      - ./tables.sql:/docker-entrypoint-initdb.d/tables.sql
+  
+volumes:
+  data:
